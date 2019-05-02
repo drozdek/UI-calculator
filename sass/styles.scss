@@ -1,6 +1,8 @@
 @import "compass/reset";
 
 $color-black: rgba(0, 0, 0, 1);
+$itemWidth: 65px;
+$itemHeight: $itemWidth;
 
 @mixin border-1px {
   border: 1px solid $color-black
@@ -16,8 +18,9 @@ html, body {
 body {
   margin: 0;
   font-family: 'Titillium Web', sans-serif;
+  font-size: 1.5em;
+  color: #fff
 }
-
 .container {
   height: 100%;
   padding: 0;
@@ -27,41 +30,68 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.calculator {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  width: auto;
-  border: $color-black;
-  @include border-1px();
+   .calculator {
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: auto;
+    border: $color-black;
 
-  .item {
-    background: tomato;
-    width: 40px;
-    height: 40px;
-    color: white;
-    font-size: 15px;
-    text-align: center;
-  }
-  
-  .row {
+    .result {
+      padding: 50px 30px 0 0;
+      height: 130px;
+      background: black;
+      flex-direction: row;
+      text-align: right;
+
+      .user_input {
+        color: #ccc;
+        font-size: 1.25em;
+      }
+      .user_summary {
+        color: #fff;
+        font-size: 2.5em;
+      }
+    }
+
     .item {
-      @include float-left()
+      background: rgba(214, 117, 117, 1);
+      width: $itemWidth;
+      height: $itemHeight;
+      color: white;
+      font-size: 15px;
+      text-align: center;
     }
-    .bttn {
-      float: right;
-      width: 40px;
-      height: 40px;
-      background-color: red;
-    }
-    .ac_save_butttons {
-      background : green;
-    }
-    &:after {
-      clear: both;
+    .row {
+      border-bottom: 1px solid #000;
+      .buttons{
+        @include float-left();
+        height: $itemHeight;
+        text-align: center;
+        background: rgba(255, 71, 71, 1);
+      }
+      #ac_bttn {
+        width: 90px;
+      }
+      #save_bttn {
+        width: 105px;
+      }
+      .item {
+        @include float-left()
+      }
+      .bttn {
+        float: right;
+        width: $itemWidth;
+        height: $itemHeight;
+        background-color: rgba(219, 181, 116, 1);
+        text-align: center;
+      }
+      .ac_save_butttons {
+        background : green;
+      }
+      &:after {
+        clear: both;
+      }
     }
   }
 }
-
