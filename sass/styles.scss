@@ -1,15 +1,21 @@
 @import "compass/reset";
 
 $color-black: rgba(0, 0, 0, 1);
-$itemWidth: 65px;
+$color-grey: rgba(99, 94, 94, 1);
+$itemWidth: 64px;
 $itemHeight: $itemWidth;
 
-@mixin border-1px {
-  border: 1px solid $color-black
+@mixin border-bottom-1px {
+  border-bottom: 1px solid $color-grey;
 }
 
 @mixin float-left {
   float: left;  
+}
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 html, body {
@@ -55,26 +61,30 @@ body {
     }
 
     .item {
+      @include flex();
       background: rgba(214, 117, 117, 1);
       width: $itemWidth;
       height: $itemHeight;
       color: white;
       font-size: 15px;
       text-align: center;
+
+      @include border-bottom-1px()
     }
     .row {
-      border-bottom: 1px solid #000;
       .buttons{
         @include float-left();
+        @include flex();
         height: $itemHeight;
         text-align: center;
         background: rgba(255, 71, 71, 1);
+        @include border-bottom-1px();
       }
       #ac_bttn {
         width: 90px;
       }
       #save_bttn {
-        width: 105px;
+        width: 102px;
       }
       .item {
         @include float-left()
@@ -85,6 +95,8 @@ body {
         height: $itemHeight;
         background-color: rgba(219, 181, 116, 1);
         text-align: center;
+        @include border-bottom-1px();
+        @include flex();
       }
       .ac_save_butttons {
         background : green;
