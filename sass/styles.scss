@@ -1,1 +1,32 @@
 @import "compass/reset";
+
+$color-black: rgba(0, 0, 0, 1);
+
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+
+.container {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator {
+  width: auto;
+  border: $color-black;
+  height: 100px;
+  width: 100px;
+  display: block;
+}
+
