@@ -2,6 +2,14 @@
 
 $color-black: rgba(0, 0, 0, 1);
 
+@mixin border-1px {
+  border: 1px solid $color-black
+}
+
+@mixin float-left {
+  float: left;  
+}
+
 html, body {
   height: 100%;
 }
@@ -23,10 +31,35 @@ body {
 }
 
 .calculator {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
   width: auto;
   border: $color-black;
-  height: 100px;
-  width: 100px;
-  display: block;
+  @include border-1px();
+
+  .item {
+    background: tomato;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  .row {
+    .item {
+      @include float-left()
+    }
+
+    .bttn {
+      float: right;
+      width: 40px;
+      height: 40px;
+      background-color: red;
+    }
+  }
+  
 }
 
