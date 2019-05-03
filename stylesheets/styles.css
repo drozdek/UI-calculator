@@ -65,6 +65,14 @@ body {
   color: #fff;
 }
 
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
 .container {
   height: 100%;
   padding: 0;
@@ -104,6 +112,10 @@ body {
   width: 170px;
   text-align: right;
   margin-bottom: -5px;
+  width: 50px;
+}
+.container .calculator .result .user_input:nth-child(2) input {
+  width: 35px;
 }
 .container .calculator .result .user_summary input {
   color: #fff;
@@ -154,9 +166,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.container .calculator .row .ac_save_butttons {
-  background: green;
 }
 .container .calculator .row:after {
   clear: both;

@@ -1,0 +1,24 @@
+@mixin border-bottom-1px {
+  border-bottom: 1px solid $colorGrey;
+}
+
+@mixin float-left {
+  float: left;  
+}
+
+@mixin float-right {
+  float: right;  
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin inputFlds {
+  background: transparent;
+  border: 0;
+  width: 170px;
+  text-align: right;
+}

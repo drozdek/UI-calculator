@@ -1,33 +1,6 @@
 @import "compass/reset";
-
-$color-result-box: rgba(41, 54, 59, 1);
-$color-buttons-ACSAVE: rgba(236, 71, 92, 1);
-$color-buttons-MathOper:  rgba(219, 181, 116, 1);
-$itemColor: rgba(214, 117, 117, 1);
-$color-black: rgba(0, 0, 0, 1);
-$color-grey: rgba(99, 94, 94, 1);
-$itemWidth: 64px;
-$itemHeight: $itemWidth;
-
-
-@mixin border-bottom-1px {
-  border-bottom: 1px solid $color-grey;
-}
-
-@mixin float-left {
-  float: left;  
-}
-@mixin flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-@mixin inputFlds {
-  background: transparent;
-  border: 0;
-  width: 170px;
-  text-align: right;
-}
+@import "variables";
+@import "mixins";
 
 html, body {
   height: 100%;
@@ -37,6 +10,12 @@ body {
   font-family: 'Titillium Web', sans-serif;
   font-size: 1.5em;
   color: #fff
+}
+.float-left {
+  @include float-left()
+}
+.float-right {
+  @include float-right()
 }
 .container {
   height: 100%;
@@ -52,7 +31,7 @@ body {
     flex-flow: row wrap;
     justify-content: space-around;
     width: auto;
-    border: $color-black;
+    border: $colorBlack;
 
     button {
       font-size: 0.7em;
@@ -66,7 +45,7 @@ body {
     .result {
       padding: 43px 30px 0 0;
       height: 130px;
-      background: $color-result-box;
+      background: $colorResultBox;
       flex-direction: row;
       text-align: right;
 
@@ -76,7 +55,13 @@ body {
           font-size: 1.25em;
           @include inputFlds();
           margin-bottom: -5px;   
+          width: 50px;
         }
+
+        &:nth-child(2) input {
+          width: 35px;
+        }
+
       }
       .user_summary {
           input {
@@ -104,7 +89,7 @@ body {
         @include flex();
         height: $itemHeight;
         text-align: center;
-        background: $color-buttons-ACSAVE;
+        background: $colorButtonsACSAVE;
         @include border-bottom-1px();
       }
       #ac_bttn {
@@ -120,13 +105,10 @@ body {
         float: right;
         width: $itemWidth;
         height: $itemHeight;
-        background-color: $color-buttons-MathOper;
+        background-color: $colorNuttonsMathOper;
         text-align: center;
         @include border-bottom-1px();
         @include flex();
-      }
-      .ac_save_butttons {
-        background : green;
       }
       &:after {
         clear: both;
