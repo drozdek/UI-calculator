@@ -21,8 +21,8 @@
   <div class="container">
     <div class="calculator">
       <div class="result">
-        <div class="user_input">365 x 4 =</div>
-        <div class="user_summary">1,460</div>
+        <div class="user_input"><input type="text" value="365 x 4" /></div>
+        <div class="user_summary"><input type="text" id="user_summary_input" value="1,460" /></div>
       </div>
       <div class="keyboard">
         <div class="row">
@@ -37,21 +37,21 @@
           <div id="times_bttn" class="bttn">X</div>
         </div>
         <div class="row">
-          <div class="item">1</div>
-          <div class="item">2</div>
-          <div class="item">3</div>
+          <div class="item" id="dig-1">1</div>
+          <div class="item" id="dig-2">2</div>
+          <div class="item" id="dig-3">3</div>
           <div id="minus_bttn" class="bttn">-</div>
         </div>
         <div class="row">
-          <div class="item">4</div>
-          <div class="item">5</div>
-          <div class="item">6</div>
+          <div class="item" id="dig-4">4</div>
+          <div class="item" id="dig-5">5</div>
+          <div class="item" id="dig-6">6</div>
           <div id="plus_bttn" class="bttn">+</div>
         </div>
         <div class="row">
-          <div class="item">7</div>
-          <div class="item">8</div>
-          <div class="item">9</div>
+          <div class="item" id="dig-7">7</div>
+          <div class="item" id="dig-8">8</div>
+          <div class="item" id="dig-9">9</div>
           <div id="equal_bttn" class="bttn">=</div>
         </div>
       </div>
@@ -61,6 +61,10 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
     <script src="./js/calculator.js" async defer></script>
 </body>
 

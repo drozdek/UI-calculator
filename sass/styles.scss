@@ -1,9 +1,14 @@
 @import "compass/reset";
 
+$color-result-box: rgba(41, 54, 59, 1);
+$color-buttons-ACSAVE: rgba(236, 71, 92, 1);
+$color-buttons-MathOper:  rgba(219, 181, 116, 1);
+$itemColor: rgba(214, 117, 117, 1);
 $color-black: rgba(0, 0, 0, 1);
 $color-grey: rgba(99, 94, 94, 1);
 $itemWidth: 64px;
 $itemHeight: $itemWidth;
+
 
 @mixin border-bottom-1px {
   border-bottom: 1px solid $color-grey;
@@ -16,6 +21,12 @@ $itemHeight: $itemWidth;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@mixin inputFlds {
+  background: transparent;
+  border: 0;
+  width: 170px;
+  text-align: right;
 }
 
 html, body {
@@ -44,25 +55,32 @@ body {
     border: $color-black;
 
     .result {
-      padding: 50px 30px 0 0;
+      padding: 43px 30px 0 0;
       height: 130px;
-      background: black;
+      background: $color-result-box;
       flex-direction: row;
       text-align: right;
 
       .user_input {
-        color: #ccc;
-        font-size: 1.25em;
+        input {
+          color: #ccc;
+          font-size: 1.25em;
+          @include inputFlds();
+          margin-bottom: -5px;   
+        }
       }
       .user_summary {
-        color: #fff;
-        font-size: 2.5em;
+          input {
+            color: #fff;
+            font-size: 2.3em;
+            @include inputFlds()
+          }
       }
     }
 
     .item {
       @include flex();
-      background: rgba(214, 117, 117, 1);
+      background: $itemColor;
       width: $itemWidth;
       height: $itemHeight;
       color: white;
@@ -77,7 +95,7 @@ body {
         @include flex();
         height: $itemHeight;
         text-align: center;
-        background: rgba(255, 71, 71, 1);
+        background: $color-buttons-ACSAVE;
         @include border-bottom-1px();
       }
       #ac_bttn {
@@ -93,7 +111,7 @@ body {
         float: right;
         width: $itemWidth;
         height: $itemHeight;
-        background-color: rgba(219, 181, 116, 1);
+        background-color: $color-buttons-MathOper;
         text-align: center;
         @include border-bottom-1px();
         @include flex();
