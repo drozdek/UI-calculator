@@ -54,6 +54,15 @@ body {
     width: auto;
     border: $color-black;
 
+    button {
+      font-size: 0.7em;
+      background: transparent;
+      border: 0;
+      color: #fff;
+      cursor: pointer;
+      padding: 15px;
+    }
+
     .result {
       padding: 43px 30px 0 0;
       height: 130px;
@@ -105,7 +114,7 @@ body {
         width: 102px;
       }
       .item {
-        @include float-left()
+        @include float-left();
       }
       .bttn {
         float: right;
