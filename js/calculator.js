@@ -41,7 +41,7 @@ $(function () {
    */
 
   function calculateValues() {
-    var evalRes = eval( $input_S.val() );
+    var evalRes = eval($input_S.val());
     $user_summary_input.val(evalRes)
   }
 
@@ -54,7 +54,33 @@ $(function () {
   })
   nArg = '';
  }
-  function getCurrentDateTime(){
+ 
+/**
+ * get browser used
+ */
+ var browser = (function (agent) {
+  switch (true) {
+    case agent.indexOf("edge") > -1: return "edge";
+    case agent.indexOf("opr") > -1 && !!window.opr: return "opera";
+    case agent.indexOf("chrome") > -1 && !!window.chrome: return "chrome";
+    case agent.indexOf("trident") > -1: return "ie";
+    case agent.indexOf("firefox") > -1: return "firefox";
+    case agent.indexOf("safari") > -1: return "safari";
+    default: return "other";
+  }
+})(window.navigator.userAgent.toLowerCase());
+
+  /**
+   * clear calculator
+   */
+  $('#ac_bttn > button').on('click', () => {
+    resetValues();
+  });
+
+  /**
+   * get current dateTime
+   */
+  function getCurrentDateTime() {
     // get date for current locales
     var nDate = new Date();
     nDate = nDate.toLocaleDateString('en-gb', {
@@ -66,6 +92,7 @@ $(function () {
     });
     return nDate
   }
+
   /**
    * get ajax call
    */
@@ -73,9 +100,10 @@ $(function () {
     var url = "http://localhost/itech/php/itech.php";
 
     var obj = {
-      data: $user_summary_input.val(),
-      dateTime: getCurrentDateTime()
-    }
+      brower : browser,
+      dateTime : getCurrentDateTime(),      
+      data : $user_summary_input.val()      
+    };
 
     $.ajax({
       url: url,
@@ -86,4 +114,4 @@ $(function () {
     });
   });
 
-})
+});
