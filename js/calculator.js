@@ -54,4 +54,36 @@ $(function () {
   })
   nArg = '';
  }
+  function getCurrentDateTime(){
+    // get date for current locales
+    var nDate = new Date();
+    nDate = nDate.toLocaleDateString('en-gb', {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "numeric",
+      minute: "numeric"
+    });
+    return nDate
+  }
+  /**
+   * get ajax call
+   */
+  $('#save_bttn > button').on('click', () => {
+    var url = "http://localhost/itech/php/itech.php";
+
+    var obj = {
+      data: $user_summary_input.val(),
+      dateTime: getCurrentDateTime()
+    }
+
+    $.ajax({
+      url: url,
+      type: 'POST',
+      data: {
+        data: obj
+      }
+    });
+  });
+
 })
