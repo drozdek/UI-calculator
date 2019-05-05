@@ -3,7 +3,7 @@ $(function () {
    * cache variables
    */
   var $calc = $('.calculator'),
-    arg = '', nArg = '', mOper = '', result = '',
+    nArg = '', mOper = '', result = '',
     $user_summary_input = $('#user_summary_input'),
     $input_S = $('#u_input_S');
 
@@ -21,6 +21,10 @@ $(function () {
    */
   $('[data-math]').on('click', (e) => {
     mOper = $(e.target).attr('data-math');
+    if (mOper === '=') {
+      calculateValues();
+      return
+    }
     nArg += mOper;
     showValuesOnHeader();
   });
@@ -29,7 +33,16 @@ $(function () {
    * show values on calculator header
    */
   function showValuesOnHeader() {
-      $input_S.val(nArg);
+    $input_S.val(nArg);
+  }
+
+  /**
+   * calculate values
+   */
+
+  function calculateValues() {
+    var evalRes = eval( $input_S.val() );
+    $user_summary_input.val(evalRes)
   }
 
 })
