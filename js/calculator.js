@@ -45,4 +45,13 @@ $(function () {
     $user_summary_input.val(evalRes)
   }
 
+ /**
+  * set values to defaults
+  */
+ function resetValues(){
+  [$user_summary_input,$input_S].forEach(e => {
+    e.val('');
+  })
+  nArg = '';
+ }
 })
