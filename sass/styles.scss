@@ -55,7 +55,6 @@ body {
           font-size: 1.25em;
           @include inputFlds();
           margin-bottom: -5px;   
-          width: 50px;
         }
 
         &:nth-child(2) input {

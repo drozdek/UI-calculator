@@ -21,40 +21,38 @@
   <div class="container">
     <div class="calculator">
       <div class="result">
-        <div class="user_input float-right"><input id="u_input_F" type="text" value="" /></div>
-        <div class="user_input float-right"><input id="u_input_O" type="text" value="" /></div>
-        <div class="user_input float-right"><input id="u_input_S" type="text" value="" /></div>
+        <div class="user_input "><input id="u_input_S" type="text" value="" /></div>
         <div class="user_summary"><input type="text" id="user_summary_input" value="" /></div>
       </div>
       <div class="keyboard">
         <div class="row">
           <div class="buttons" id="ac_bttn"><button>AC</button></div>
           <div class="buttons" id="save_bttn"><button>SAVE</button></div>
-          <div id="percent_bttn" class="bttn"><button>%</button></div>
+          <div id="percent_bttn" class="bttn"><button data-math="%">%</button></div>
         </div>
         <div class="row">
-          <div class="item"><button>.</button></div>
-          <div class="item"><button>0</button></div>
+          <div class="item" id="dot"><button>.</button></div>
+          <div class="item" id="dig-0"><button>0</button></div>
           <div class="item">&nbsp;</div>
-          <div id="times_bttn" class="bttn"><button>x</button></div>
+          <div id="times_bttn" class="bttn"><button data-math="x">x</button></div>
         </div>
         <div class="row">
           <div class="item" id="dig-1"><button>1</button></div>
           <div class="item" id="dig-2"><button>2</button></div>
           <div class="item" id="dig-3"><button>3</button></div>
-          <div id="minus_bttn" class="bttn"><button>-</button></div>
+          <div id="minus_bttn" class="bttn"><button data-math="-">-</button></div>
         </div>
         <div class="row">
           <div class="item" id="dig-4"><button>4</button></div>
           <div class="item" id="dig-5"><button>5</button></div>
           <div class="item" id="dig-6"><button>6</button></div>
-          <div id="plus_bttn" class="bttn"><button>+</button></div>
+          <div id="plus_bttn" class="bttn"><button data-math="+">+</button></div>
         </div>
         <div class="row">
           <div class="item" id="dig-7"><button>7</button></div>
           <div class="item" id="dig-8"><button>8</button></div>
           <div class="item" id="dig-9"><button>9</button></div>
-          <div id="equal_bttn" class="bttn"><button>=</button></div>
+          <div id="equal_bttn" class="bttn"><button data-math="=">=</button></div>
         </div>
       </div>
     </div>

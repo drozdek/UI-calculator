@@ -112,7 +112,6 @@ body {
   width: 170px;
   text-align: right;
   margin-bottom: -5px;
-  width: 50px;
 }
 .container .calculator .result .user_input:nth-child(2) input {
   width: 35px;
