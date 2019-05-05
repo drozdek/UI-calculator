@@ -30,45 +30,45 @@ $(function () {
   });
 
   /**
-   * show values on calculator header
+   * @method showValuesOnHeader show values on calculator header
    */
   function showValuesOnHeader() {
-    $input_S.val(nArg);
+    return $input_S.val(nArg);
   }
 
   /**
-   * calculate values
+   * @method calculateValues - calculate values
    */
-
   function calculateValues() {
     var evalRes = eval($input_S.val());
-    $user_summary_input.val(evalRes)
+    return $user_summary_input.val(evalRes)
   }
 
- /**
-  * set values to defaults
-  */
- function resetValues(){
-  [$user_summary_input,$input_S].forEach(e => {
-    e.val('');
-  })
-  nArg = '';
- }
- 
-/**
- * get browser used
- */
- var browser = (function (agent) {
-  switch (true) {
-    case agent.indexOf("edge") > -1: return "edge";
-    case agent.indexOf("opr") > -1 && !!window.opr: return "opera";
-    case agent.indexOf("chrome") > -1 && !!window.chrome: return "chrome";
-    case agent.indexOf("trident") > -1: return "ie";
-    case agent.indexOf("firefox") > -1: return "firefox";
-    case agent.indexOf("safari") > -1: return "safari";
-    default: return "other";
+  /**
+   * @method resetValues reset values to defaults
+   */
+  function resetValues() {
+    [$user_summary_input, $input_S].forEach(e => {
+      e.val('');
+    })
+    nArg = '';
   }
-})(window.navigator.userAgent.toLowerCase());
+
+  /**
+   * @method broser - get browser used
+   * @returns {string} browser
+   */
+  var browser = (function (agent) {
+    switch (true) {
+      case agent.indexOf("edge") > -1: return "edge";
+      case agent.indexOf("opr") > -1 && !!window.opr: return "opera";
+      case agent.indexOf("chrome") > -1 && !!window.chrome: return "chrome";
+      case agent.indexOf("trident") > -1: return "ie";
+      case agent.indexOf("firefox") > -1: return "firefox";
+      case agent.indexOf("safari") > -1: return "safari";
+      default: return "other";
+    }
+  })(window.navigator.userAgent.toLowerCase());
 
   /**
    * clear calculator
@@ -78,7 +78,8 @@ $(function () {
   });
 
   /**
-   * get current dateTime
+   * @method getCurrentDateTime - get current dateTime 
+   * @returns {date} nDate
    */
   function getCurrentDateTime() {
     // get date for current locales
@@ -94,15 +95,16 @@ $(function () {
   }
 
   /**
-   * get ajax call
+   * perform ajax call 
+   * to send obj
    */
   $('#save_bttn > button').on('click', () => {
     var url = "http://localhost/itech/php/itech.php";
 
     var obj = {
-      brower : browser,
-      dateTime : getCurrentDateTime(),      
-      data : $user_summary_input.val()      
+      brower: browser,
+      dateTime: getCurrentDateTime(),
+      data: $user_summary_input.val()
     };
 
     $.ajax({
