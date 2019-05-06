@@ -30,6 +30,18 @@ function getUserIpAddr(){
       $ip = $_SERVER['REMOTE_ADDR'];
   }
   return $ip;
+}
 
-echo $data;
+/**
+ * create a file handler 
+ */
+$file = fopen('file.csv', 'a');
+
+/**
+ * insert calculation result into file handler
+ */
+if ($file){
+    fputcsv( $file, array ($obj->calculationData, $obj->date, $obj->ip, $obj->browser ));
+}
+
 ?>
