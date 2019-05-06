@@ -95,7 +95,9 @@ body {
   border: 0;
   color: #fff;
   cursor: pointer;
-  padding: 15px;
+  outline: none;
+  height: 100%;
+  width: 100%;
 }
 .container .calculator .result {
   padding: 43px 30px 0 0;

@@ -93,6 +93,18 @@ $(function () {
   }
 
   /**
+   * detect equal sign keypress
+   */
+    $(document).on('keypress', (e) => {
+      var kCode = e.keyCode || e.which;
+
+      // equal sign '=' presses 
+      if (kCode === 61) {
+        calculateValues();
+      }
+    });
+
+  /**
    * perform ajax call 
    * to send obj
    */

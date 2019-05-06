@@ -38,8 +38,10 @@ body {
       background: transparent;
       border: 0;
       color: #fff;
-      cursor: pointer;
-      padding: 15px;
+      cursor: pointer;    
+      outline: none;
+      height: 100%;
+      width: 100%
     }
 
     .result {
