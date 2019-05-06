@@ -87,9 +87,7 @@ $(function () {
     nDate = nDate.toLocaleDateString('en-gb', {
       year: "numeric",
       month: "2-digit",
-      day: "2-digit",
-      hour: "numeric",
-      minute: "numeric"
+      day: "2-digit"
     });
     return nDate
   }
@@ -102,8 +100,8 @@ $(function () {
     var url = "http://localhost/itech/php/itech.php";
 
     var obj = {
-      brower: browser,
-      dateTime: getCurrentDateTime(),
+      browser: browser,
+      date: getCurrentDateTime(),
       data: $user_summary_input.val()
     };
 
