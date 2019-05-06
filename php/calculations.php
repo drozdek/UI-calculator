@@ -5,6 +5,12 @@
  * 
  */
 
+ /**
+  * table shown is not properly formatted at all
+  * this is done only for showing purposes !
+  * for production css must be used
+  * 
+  */
  function parse_csv($file){
   echo "<table border='1'>";
     if (($handle = fopen($file, 'r')) !== FALSE) { 
