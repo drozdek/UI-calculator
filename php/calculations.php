@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @method parse_csv  - parse CSV file  
- * 
+ * @method parse_csv  parse CSV file  
+ * @param {string} $file  file to be parsed 
  */
 
  /**
@@ -13,17 +13,20 @@
   */
  function parse_csv($file){
   echo "<table border='1'>";
-    if (($handle = fopen($file, 'r')) !== FALSE) { 
-      
-      while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) { 
+
+  // now a different solution (opposite to previous one - fgetcsv() method )
+  // as we're reading the whole file
+  // we can treat it as an array 
+  // and simply revers one
+    $handle = file($file);
+    if ( $handle !== FALSE) { 
+      $handler = array_reverse($handle);
+      foreach ($handler as $key => $value) {
         echo "<tr>";
-          for ($i = 0; $i < count($data); $i++) {
-            echo "<td>". ($arr = $data[$i]) . "</td>";
-          }
-          echo "</tr>";
+        echo "<td>" .$value. "</td>";
+        echo "</tr>";
       }
-      fclose($handle);
-    }
+    }    
   echo "</table>";
  };
 
